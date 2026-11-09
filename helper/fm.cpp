@@ -19,6 +19,7 @@
 
 #include "fm.h"
 #include <QDir>
+#include <QProcess>
 #include <QUrl>
 #include <QStandardPaths>
 
@@ -32,6 +33,11 @@ Fm::Fm(QObject *parent) : QObject(parent)
 QString Fm::rootPath()
 {
     return QDir::rootPath();
+}
+
+void Fm::askEmptyTrash()
+{
+    QProcess::startDetached(QStringLiteral("lingmo-filemanager"), {QStringLiteral("-e")});
 }
 
 void Fm::emptyTrash()

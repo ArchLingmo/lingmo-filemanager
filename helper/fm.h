@@ -31,6 +31,8 @@ public:
 
     Q_INVOKABLE QString rootPath();
     Q_INVOKABLE static void emptyTrash();
+    // The confirmation first (the same dialog as the Empty Trash button)
+    Q_INVOKABLE static void askEmptyTrash();
     static bool isFixedFolder(const QUrl &folderUrl);
 };
 

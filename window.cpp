@@ -21,6 +21,10 @@
 #include <QEvent>
 #include <QDebug>
 #include <QQuickWindow>
+#include <QGuiApplication>
+#include <QCursor>
+#include <QScreen>
+#include <QTimer>
 #include <QPixmapCache>
 
 Window::Window(QObject *parent)
@@ -39,8 +43,38 @@ void Window::load(const QUrl &url)
 
     QQuickWindow *w = qobject_cast<QQuickWindow *>(rootObjects().first());
 
-    if (w)
-        w->installEventFilter(this);
+    if (!w)
+        return;
+    w->installEventFilter(this);
+
+    // A dialog (Empty Trash, Delete, …) opens over the file manager window it came from: with
+    // no parent it opened at 0,0 of whatever screen, often another monitor or behind the window
+    if (w->flags().testFlag(Qt::Dialog)) {
+        QWindow *parent = QGuiApplication::focusWindow();
+        if (!parent || parent == w) {
+            for (QWindow *top : QGuiApplication::topLevelWindows()) {
+                if (top != w && top->isVisible() && top->type() == Qt::Window && top->screen() == QGuiApplication::screenAt(QCursor::pos())) {
+                    parent = top;
+                    break;
+                }
+            }
+        }
+        QRect area;
+        if (parent && parent != w) {
+            area = parent->geometry();
+        } else if (QScreen *screen = QGuiApplication::screenAt(QCursor::pos())) {
+            area = screen->availableGeometry();
+        }
+        if (parent && parent != w)
+            w->setTransientParent(parent);
+        // the QML shows the window while loading and the frameless LingmoUI window settles its
+        // geometry right after: place it once that is done
+        QTimer::singleShot(0, w, [w, area] {
+            if (area.isValid())
+                w->setPosition(area.center() - QPoint(w->width() / 2, w->height() / 2));
+            w->requestActivate();
+        });
+    }
 }
 
 bool Window::eventFilter(QObject *obj, QEvent *e)

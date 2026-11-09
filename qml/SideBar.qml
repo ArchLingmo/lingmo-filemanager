@@ -301,6 +301,14 @@ Rectangle {
         }
 
         MenuItem {
+            text: qsTr("Empty Trash")
+            visible: _placeMenu.target.indexOf("trash:") === 0
+            enabled: Places.trashCount > 0
+            height: visible ? implicitHeight : 0
+            onTriggered: _fm.askEmptyTrash()
+        }
+
+        MenuItem {
             text: qsTr("Eject")
             visible: _placeMenu.device && !_placeMenu.item.setupNeeded && _placeMenu.item.isOpticalDisc
                      && _placeMenu.target !== _fm.rootPath()

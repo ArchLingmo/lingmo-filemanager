@@ -50,7 +50,7 @@ LingmoUI.Window {
 
     DragHandler {
         target: null
-        acceptedDevices: PointerDevice.GenericPointer
+        acceptedDevices: PointerDevice.Mouse | PointerDevice.TouchPad | PointerDevice.Stylus
         grabPermissions: PointerHandler.CanTakeOverFromItems | PointerHandler.CanTakeOverFromHandlersOfDifferentType | PointerHandler.ApprovesTakeOverByAnything
         onActiveChanged: if (active) { control.helper.startSystemMove(control) }
     }

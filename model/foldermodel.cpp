@@ -285,6 +285,9 @@ QVariant FolderModel::data(const QModelIndex &index, int role) const
             if (!dfile.readName().isEmpty())
                 return dfile.readName();
         }
+        // In trash:/ the url is "<trash id>-<name>" (0-report.pdf); the item's text is the real name
+        if (item.url().scheme() == QLatin1String("trash"))
+            return item.text();
 
         return item.url().fileName();
     }

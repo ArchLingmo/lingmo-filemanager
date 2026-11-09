@@ -112,6 +112,19 @@
     </message>
 </context>
 <context>
+    <name>FileActions</name>
+    <message>
+        <location filename="../helper/fileactions.cpp" line="+22"/>
+        <source>Convert…</source>
+        <translation>Converter…</translation>
+    </message>
+    <message>
+        <location line="+0"/>
+        <source>File Actions…</source>
+        <translation>Ações de arquivo…</translation>
+    </message>
+</context>
+<context>
     <name>FilePropertiesDialog</name>
     <message>
         <location filename="../dialogs/filepropertiesdialog.cpp" line="+194"/>
@@ -127,6 +140,7 @@
 <context>
     <name>FolderColumnList</name>
     <message>
+        <location filename="../qml/FolderColumnList.qml" line="+91"/>
         <source>Empty folder</source>
         <translation>Pasta vazia</translation>
     </message>
@@ -134,6 +148,7 @@
 <context>
     <name>FolderColumnsView</name>
     <message>
+        <location filename="../qml/FolderColumnsView.qml" line="+275"/>
         <source>Empty folder</source>
         <translation>Pasta vazia</translation>
     </message>
@@ -141,7 +156,7 @@
 <context>
     <name>FolderListView</name>
     <message>
-        <location filename="../qml/FolderListView.qml" line="+96"/>
+        <location filename="../qml/FolderListView.qml" line="+114"/>
         <source>Name</source>
         <translation>Nome</translation>
     </message>
@@ -164,7 +179,7 @@
 <context>
     <name>FolderModel</name>
     <message>
-        <location filename="../model/foldermodel.cpp" line="+284"/>
+        <location filename="../model/foldermodel.cpp" line="+314"/>
         <source>%1 item</source>
         <translation>%1 item</translation>
     </message>
@@ -174,17 +189,17 @@
         <translation>%1 itens</translation>
     </message>
     <message>
-        <location line="+109"/>
+        <location line="+110"/>
         <source>The file or folder %1 does not exist.</source>
         <translation>O arquivo ou pasta %1 não existe.</translation>
     </message>
     <message>
-        <location line="+1010"/>
+        <location line="+1045"/>
         <source>Select All</source>
         <translation>Selecionar tudo</translation>
     </message>
     <message>
-        <location line="+500"/>
+        <location line="+496"/>
         <source>Open</source>
         <translation>Abrir</translation>
     </message>
@@ -209,20 +224,20 @@
         <translation>Colar</translation>
     </message>
     <message>
-        <location line="-1004"/>
-        <location line="+1007"/>
+        <location line="-1034"/>
+        <location line="+1037"/>
         <source>New Folder</source>
         <translation>Nova pasta</translation>
     </message>
     <message>
-        <location line="-986"/>
-        <location line="+990"/>
+        <location line="-1016"/>
+        <location line="+1020"/>
         <source>New Text</source>
         <translation>Novo texto</translation>
     </message>
     <message>
-        <location line="-513"/>
-        <location line="+512"/>
+        <location line="-509"/>
+        <location line="+508"/>
         <source>New Documents</source>
         <translation>Novo documento</translation>
     </message>
@@ -282,17 +297,17 @@
         <translation>Abrir em uma nova janela</translation>
     </message>
     <message>
-        <location line="-608"/>
+        <location line="-604"/>
         <source>Sort By</source>
         <translation>Ordenar por</translation>
     </message>
     <message>
-        <location line="-213"/>
+        <location line="-245"/>
         <source>Trash</source>
         <translation>Lixeira</translation>
     </message>
     <message>
-        <location line="+218"/>
+        <location line="+250"/>
         <source>Name</source>
         <translation>Nome</translation>
     </message>
@@ -327,18 +342,18 @@
         <translation>Pastas primeiro</translation>
     </message>
     <message>
-        <location line="+578"/>
+        <location line="+574"/>
         <source>Open in New Tab</source>
         <translation>Abrir em nova aba</translation>
     </message>
     <message>
         <location line="+10"/>
-        <location line="+215"/>
+        <location line="+232"/>
         <source>Add to Favorites</source>
         <translation>Adicionar aos favoritos</translation>
     </message>
     <message>
-        <location line="-190"/>
+        <location line="-207"/>
         <source>Extract Here</source>
         <translation>Extrair aqui</translation>
     </message>
@@ -363,7 +378,7 @@
         <translation>Não foi possível iniciar o Ark. Instale o Ark para extrair e compactar arquivos.</translation>
     </message>
     <message>
-        <location line="+179"/>
+        <location line="+196"/>
         <source>Remove from Favorites</source>
         <translation>Remover dos favoritos</translation>
     </message>
@@ -371,7 +386,7 @@
 <context>
     <name>FolderPage</name>
     <message>
-        <location filename="../qml/FolderPage.qml" line="+221"/>
+        <location filename="../qml/FolderPage.qml" line="+223"/>
         <source>Empty folder</source>
         <translation>Pasta vazia</translation>
     </message>
@@ -386,12 +401,12 @@
         <translation>Abrir</translation>
     </message>
     <message>
-        <location line="-337"/>
+        <location line="-339"/>
         <source>Trash</source>
         <translation>Lixeira</translation>
     </message>
     <message>
-        <location line="+176"/>
+        <location line="+178"/>
         <source>Drag files here or create a new folder.</source>
         <translation>Arraste arquivos para cá ou crie uma nova pasta.</translation>
     </message>
@@ -469,6 +484,77 @@
         <location line="+7"/>
         <source>Show in Folder</source>
         <translation>Mostrar na pasta</translation>
+    </message>
+</context>
+<context>
+    <name>IslandJobTracker</name>
+    <message>
+        <location filename="../helper/islandjobtracker.cpp" line="+79"/>
+        <source>Moving files</source>
+        <translation>Movendo arquivos</translation>
+    </message>
+    <message>
+        <location line="+0"/>
+        <source>Copying files</source>
+        <translation>Copiando arquivos</translation>
+    </message>
+    <message>
+        <location line="+7"/>
+        <source>Moving %1 of %2 items</source>
+        <translation>Movendo %1 de %2 itens</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Copying %1 of %2 items</source>
+        <translation>Copiando %1 de %2 itens</translation>
+    </message>
+    <message>
+        <location line="+2"/>
+        <source>Moving 1 item</source>
+        <translation>Movendo 1 item</translation>
+    </message>
+    <message>
+        <location line="+0"/>
+        <source>Copying 1 item</source>
+        <translation>Copiando 1 item</translation>
+    </message>
+    <message>
+        <location line="+7"/>
+        <source>%1 of %2</source>
+        <translation>%1 de %2</translation>
+    </message>
+    <message>
+        <location line="+22"/>
+        <source>Cancel</source>
+        <translation>Cancelar</translation>
+    </message>
+    <message>
+        <location line="+51"/>
+        <source>Move failed</source>
+        <translation>Falha ao mover</translation>
+    </message>
+    <message>
+        <location line="+0"/>
+        <source>Copy failed</source>
+        <translation>Falha na cópia</translation>
+    </message>
+    <message>
+        <location line="+2"/>
+        <source>Move complete</source>
+        <translation>Movimentação concluída</translation>
+    </message>
+    <message>
+        <location line="+0"/>
+        <source>Copy complete</source>
+        <translation>Cópia concluída</translation>
+    </message>
+</context>
+<context>
+    <name>NearbyShare</name>
+    <message>
+        <location filename="../helper/nearbyshare.cpp" line="+20"/>
+        <source>Send to Nearby Device…</source>
+        <translation>Enviar para dispositivo próximo…</translation>
     </message>
 </context>
 <context>
@@ -576,7 +662,7 @@
         <translation>Computador</translation>
     </message>
     <message>
-        <location line="+125"/>
+        <location line="+134"/>
         <source>%1 free of %2</source>
         <translation>%1 livres de %2</translation>
     </message>
@@ -673,7 +759,7 @@
 <context>
     <name>PreviewPane</name>
     <message>
-        <location filename="../qml/PreviewPane.qml" line="+141"/>
+        <location filename="../qml/PreviewPane.qml" line="+157"/>
         <source>%1 items selected</source>
         <translation>%1 itens selecionados</translation>
     </message>
@@ -767,6 +853,25 @@
     </message>
 </context>
 <context>
+    <name>QObject</name>
+    <message>
+        <location filename="../intents/filesintents.cpp" line="+43"/>
+        <location line="+12"/>
+        <source>File not found: %1</source>
+        <translation>Arquivo não encontrado: %1</translation>
+    </message>
+    <message>
+        <location line="+2"/>
+        <source>Programs, scripts and app launchers are never opened by actions.</source>
+        <translation>Programas, scripts e atalhos de apps nunca são abertos por ações.</translation>
+    </message>
+    <message>
+        <location line="+14"/>
+        <source>Not a folder: %1</source>
+        <translation>Não é uma pasta: %1</translation>
+    </message>
+</context>
+<context>
     <name>SearchResultsView</name>
     <message>
         <location filename="../qml/SearchResultsView.qml" line="+57"/>
@@ -828,36 +933,41 @@
     </message>
     <message>
         <location line="+49"/>
-        <location line="+63"/>
+        <location line="+71"/>
         <location line="+45"/>
         <source>Open</source>
         <translation>Abrir</translation>
     </message>
     <message>
-        <location line="-98"/>
-        <location line="+58"/>
+        <location line="-106"/>
+        <location line="+66"/>
         <source>Open in New Tab</source>
         <translation>Abrir em nova aba</translation>
     </message>
     <message>
-        <location line="-52"/>
-        <location line="+57"/>
+        <location line="-60"/>
+        <location line="+65"/>
         <source>Open in new window</source>
         <translation>Abrir em uma nova janela</translation>
     </message>
     <message>
-        <location line="-51"/>
-        <location line="+70"/>
+        <location line="-59"/>
+        <location line="+78"/>
         <source>Remove from Favorites</source>
         <translation>Remover dos favoritos</translation>
     </message>
     <message>
-        <location line="-70"/>
+        <location line="-78"/>
         <source>Add to Favorites</source>
         <translation>Adicionar aos favoritos</translation>
     </message>
     <message>
         <location line="+12"/>
+        <source>Empty Trash</source>
+        <translation>Esvaziar Lixeira</translation>
+    </message>
+    <message>
+        <location line="+8"/>
         <source>Eject</source>
         <translation>Ejetar</translation>
     </message>
@@ -909,7 +1019,7 @@
         <translation>Um gerenciador de arquivos projetado para o LingmoOS.</translation>
     </message>
     <message>
-        <location line="+30"/>
+        <location line="+31"/>
         <source>File</source>
         <translation>Arquivo</translation>
     </message>
@@ -984,7 +1094,7 @@
         <translation>Lista</translation>
     </message>
     <message>
-        <location line="+9"/>
+        <location line="+16"/>
         <source>Preview Pane</source>
         <translation>Painel de visualização</translation>
     </message>
@@ -1024,7 +1134,7 @@
         <translation>Pesquisar (Ctrl+F)</translation>
     </message>
     <message>
-        <location line="+14"/>
+        <location line="+16"/>
         <source>Icons (Ctrl+1)</source>
         <translation>Ícones (Ctrl+1)</translation>
     </message>
@@ -1034,7 +1144,7 @@
         <translation>Lista (Ctrl+2)</translation>
     </message>
     <message>
-        <location line="+9"/>
+        <location line="+10"/>
         <source>Sort</source>
         <translation>Ordenar</translation>
     </message>
@@ -1049,96 +1159,14 @@
         <translation>Painel de visualização (Alt+P)</translation>
     </message>
     <message>
+        <location line="-153"/>
         <source>Columns</source>
         <translation>Colunas</translation>
     </message>
     <message>
+        <location line="+131"/>
         <source>Columns (Ctrl+3)</source>
         <translation>Colunas (Ctrl+3)</translation>
-    </message>
-</context>
-<context>
-    <name>IslandJobTracker</name>
-    <message>
-        <source>Moving files</source>
-        <translation>Movendo arquivos</translation>
-    </message>
-    <message>
-        <source>Copying files</source>
-        <translation>Copiando arquivos</translation>
-    </message>
-    <message>
-        <source>Moving %1 of %2 items</source>
-        <translation>Movendo %1 de %2 itens</translation>
-    </message>
-    <message>
-        <source>Copying %1 of %2 items</source>
-        <translation>Copiando %1 de %2 itens</translation>
-    </message>
-    <message>
-        <source>Moving 1 item</source>
-        <translation>Movendo 1 item</translation>
-    </message>
-    <message>
-        <source>Copying 1 item</source>
-        <translation>Copiando 1 item</translation>
-    </message>
-    <message>
-        <source>%1 of %2</source>
-        <translation>%1 de %2</translation>
-    </message>
-    <message>
-        <source>Cancel</source>
-        <translation>Cancelar</translation>
-    </message>
-    <message>
-        <source>Move failed</source>
-        <translation>Falha ao mover</translation>
-    </message>
-    <message>
-        <source>Copy failed</source>
-        <translation>Falha na cópia</translation>
-    </message>
-    <message>
-        <source>Move complete</source>
-        <translation>Movimentação concluída</translation>
-    </message>
-    <message>
-        <source>Copy complete</source>
-        <translation>Cópia concluída</translation>
-    </message>
-</context>
-<context>
-    <name>FileActions</name>
-    <message>
-        <source>Convert…</source>
-        <translation>Converter…</translation>
-    </message>
-    <message>
-        <source>File Actions…</source>
-        <translation>Ações de arquivo…</translation>
-    </message>
-</context>
-<context>
-    <name>NearbyShare</name>
-    <message>
-        <source>Send to Nearby Device…</source>
-        <translation>Enviar para dispositivo próximo…</translation>
-    </message>
-</context>
-<context>
-    <name>QObject</name>
-    <message>
-        <source>File not found: %1</source>
-        <translation>Arquivo não encontrado: %1</translation>
-    </message>
-    <message>
-        <source>Programs, scripts and app launchers are never opened by actions.</source>
-        <translation>Programas, scripts e atalhos de apps nunca são abertos por ações.</translation>
-    </message>
-    <message>
-        <source>Not a folder: %1</source>
-        <translation>Não é uma pasta: %1</translation>
     </message>
 </context>
 </TS>
