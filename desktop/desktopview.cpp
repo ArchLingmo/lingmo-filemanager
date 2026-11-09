@@ -32,6 +32,8 @@
 #include <KWindowSystem>
 #include <KX11Extras>
 
+#include <LayerShellQt/Window>
+
 DesktopView::DesktopView(QScreen *screen, QQuickView *parent)
     : QQuickView(parent)
     , m_screen(screen)
@@ -39,12 +41,30 @@ DesktopView::DesktopView(QScreen *screen, QQuickView *parent)
     m_screenRect = m_screen->geometry();
     this->setFlag(Qt::FramelessWindowHint);
     this->setColor(QColor(Qt::transparent));
-    KX11Extras::setType(winId(), NET::Desktop);
-    KX11Extras::setState(winId(), NET::KeepBelow);
+    if (KWindowSystem::isPlatformWayland()) {
+        // Wayland: the background layer of this screen, under every window and
+        // panel, the whole output (whatever the panels reserve); the keyboard
+        // when clicked (rename, select all, delete...)
+        auto *layer = LayerShellQt::Window::get(this);
+        layer->setScope(QStringLiteral("lingmo-desktop"));
+        layer->setLayer(LayerShellQt::Window::LayerBackground);
+        layer->setAnchors(LayerShellQt::Window::Anchors(LayerShellQt::Window::AnchorTop
+                                                        | LayerShellQt::Window::AnchorBottom
+                                                        | LayerShellQt::Window::AnchorLeft
+                                                        | LayerShellQt::Window::AnchorRight));
+        layer->setExclusiveZone(-1);
+        layer->setKeyboardInteractivity(LayerShellQt::Window::KeyboardInteractivityOnDemand);
+        layer->setActivateOnShow(false);
+        layer->setScreen(m_screen);
+    } else {
+        KX11Extras::setType(winId(), NET::Desktop);
+        KX11Extras::setState(winId(), NET::KeepBelow);
+    }
 
     engine()->rootContext()->setContextProperty("desktopView", this);
     engine()->rootContext()->setContextProperty("Dock", DockDBusInterface::self());
-    QWindow::fromWinId(winId())->setOpacity(0.99);
+    if (!KWindowSystem::isPlatformWayland())
+        QWindow::fromWinId(winId())->setOpacity(0.99);
     engine()->addImageProvider("thumbnailer", new ThumbnailProvider());
 
     setTitle(tr("Desktop"));

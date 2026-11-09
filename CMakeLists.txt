@@ -17,6 +17,8 @@ find_package(Qt6 COMPONENTS Core DBus Quick LinguistTools Core5Compat REQUIRED)
 find_package(KF6KIO REQUIRED)
 find_package(KF6Solid REQUIRED)
 find_package(KF6WindowSystem REQUIRED)
+# Wayland: the desktop is a layer-shell background surface per screen
+find_package(LayerShellQt REQUIRED)
 find_package(KF6Config REQUIRED)
 find_package(KF6Service REQUIRED)
 find_package(KF6XmlGui REQUIRED)
@@ -111,6 +113,7 @@ target_link_libraries(lingmo-filemanager
   KF6::XmlGui
 
   LingmoUI3
+  LayerShellQt::Interface
 )
 
 if(Poppler_Qt6_FOUND)
